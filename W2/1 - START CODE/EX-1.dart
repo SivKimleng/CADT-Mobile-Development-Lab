@@ -2,14 +2,14 @@
 enum Skill { FLUTTER, DART, OTHER }
 
 class Address {
-  final String street;
-  final String city;
-  final String zipCode;
+  final String _street;
+  final String   _city;
+  final String _zipCode;
 
   Address({
-    required this.street,
-    required this.city,
-    required this.zipCode,
+    required this._street,
+    required this._city,
+    required this._zipCode,
   });
 }
 
@@ -28,7 +28,7 @@ class Employee {
     required int yearsOfExperience,
   })  : _name = name,
         _baseSalary = baseSalary,
-        _skills = List.unmodifiable(skills),
+        _skills = (skills),
         _address = address,
         _yearsOfExperience = yearsOfExperience;
 
@@ -38,7 +38,7 @@ class Employee {
     required int yearsOfExperience,
   })  : _name = name,
         _baseSalary = 40000,
-        _skills = List.unmodifiable([Skill.FLUTTER, Skill.DART]),
+        _skills = const[Skill.FLUTTER, Skill.DART],
         _address = address,
         _yearsOfExperience = yearsOfExperience;
 
@@ -84,7 +84,7 @@ class Employee {
     print('Employee: $_name');
     print('Base Salary: \$$_baseSalary');
     print('Skills: $_skills');
-    print('Address: ${_address.street}, ${_address.city}, ${_address.zipCode}');
+    print('Address: ${_address._street}, ${_address._city}, ${_address._zipCode}');
     print('Years of Experience: $_yearsOfExperience');
     print('Total Salary: \$${computeSalary()}');
     print('----------------------------');
