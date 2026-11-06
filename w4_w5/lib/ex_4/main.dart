@@ -18,7 +18,7 @@ void main() {
                     color: Colors.blue,
                   ),
                 ),
-                const SizedBox(width: 100),
+              
               ],
             ),
 
